@@ -1,107 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SalesPulse — Data Analytics Dashboard</title>
-<link rel="stylesheet" href="/static/style.css" />
-<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
-</head>
-<body>
-
-  <header class="topbar">
-    <div class="brand">
-      <span class="brand-mark">◆</span>
-      <span class="brand-name">SalesPulse</span>
-    </div>
-    <div class="brand-tag">Data Analytics Dashboard for Business Insights</div>
-  </header>
-
-  <main class="layout">
-
-    <section class="panel upload-panel">
-      <div class="panel-title">Data Source</div>
-      <form id="upload-form">
-        <input type="file" id="file-input" accept=".csv,.xlsx,.xls" />
-        <button type="submit" id="upload-btn">Ingest File</button>
-        <span id="upload-status" class="status-text"></span>
-      </form>
-      <div class="hint">Drop a CSV/Excel with columns: <code>date, region, product, units_sold, unit_price</code>. Ships with sample data pre-loaded in <code>data/sample_sales.csv</code> — run the generator script or upload it directly.</div>
-    </section>
-
-    <section class="panel filter-panel">
-      <div class="panel-title">Filters</div>
-      <div class="filters">
-        <div class="filter-group">
-          <label for="region-select">Region</label>
-          <select id="region-select"><option value="">All Regions</option></select>
-        </div>
-        <div class="filter-group">
-          <label for="product-select">Product</label>
-          <select id="product-select"><option value="">All Products</option></select>
-        </div>
-        <div class="filter-group">
-          <label for="start-date">From</label>
-          <input type="date" id="start-date" />
-        </div>
-        <div class="filter-group">
-          <label for="end-date">To</label>
-          <input type="date" id="end-date" />
-        </div>
-        <div class="filter-group">
-          <label for="granularity-select">Granularity</label>
-          <select id="granularity-select">
-            <option value="month">Monthly</option>
-            <option value="year">Yearly</option>
-          </select>
-        </div>
-        <button id="apply-filters">Apply</button>
-        <button id="reset-filters" class="ghost">Reset</button>
-      </div>
-    </section>
-
-    <section class="kpi-strip">
-      <div class="kpi-card">
-        <div class="kpi-label">Total Revenue</div>
-        <div class="kpi-value" id="kpi-revenue">—</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Units Sold</div>
-        <div class="kpi-value" id="kpi-units">—</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Avg. Order Value</div>
-        <div class="kpi-value" id="kpi-aov">—</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Transactions</div>
-        <div class="kpi-value" id="kpi-transactions">—</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">MoM Growth</div>
-        <div class="kpi-value" id="kpi-growth">—</div>
-      </div>
-    </section>
-
-    <section class="chart-grid">
-      <div class="panel chart-panel wide">
-        <div class="panel-title">Revenue Trend</div>
-        <div id="chart-trend" class="chart"></div>
-      </div>
-      <div class="panel chart-panel">
-        <div class="panel-title">Regional Performance</div>
-        <div id="chart-regional" class="chart"></div>
-      </div>
-      <div class="panel chart-panel">
-        <div class="panel-title">Top Products</div>
-        <div id="chart-products" class="chart"></div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">Built with FastAPI, Pandas, SQLite &amp; Plotly.js</footer>
-
-  <script src="/static/script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>frontend</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
